@@ -1,0 +1,307 @@
+/*
+    IMPORTING FONT FROM GOOGLE-FONT
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*
+    RESET
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+    ROOT-VARIABLE DECLARATIONS
+*/
+:root {
+    /* COLOR */
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+
+    /* FONTS */
+    --xs-font: 400 16px 'Poppins', sans-serif;
+    --small-font: 400 16px 'Poppins', sans-serif;
+    --font-size-inputs: 700 25px 'Poppins', sans-serif;
+    --font-size-outputs: 800 100px 'Poppins', sans-serif;
+}
+
+/*
+    GENERAL STYLES
+*/
+body {
+    background-color: var(--Light-grey);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font: var(--xs-font);
+}
+
+input {
+    font: var(--font-size-inputs);
+    padding: 12px;
+    width: 180px;
+    border-radius: 10px;
+    border: solid 1px var(--Light-grey);
+    margin-top: 10px;
+}
+
+.error input {
+    border: solid 1px var(--Light-red);
+}
+
+.error {
+    color: var(--Light-red);
+}
+
+.input-error-year,
+.input-error-month,
+.input-error-day {
+    text-transform: lowercase;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 9px;
+    letter-spacing: 1px;
+}
+
+
+
+/* 
+    MAIN CONTAINER 
+*/
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 900px;
+    background-color: var(--White);
+    padding: 30px;
+    border-radius: 30px;
+    border-bottom-right-radius: 250px;
+}
+
+.input-section {
+    display: flex;
+    font: var(--small-font);
+    color: var(--Smokey-grey);
+}
+
+.input-group {
+    margin: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.button-section button {
+    background-color: var(--Purple);
+    border: none;
+    border-radius: 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-section button:hover {
+    background-color: black;
+    transform: scale(1.05);
+}
+
+.button-section .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--Light-grey);
+    margin-left: 20px;
+    align-self: center;
+}
+
+/* 
+    RESULT SECTION 
+*/
+.result-section {
+    font: var(--font-size-outputs);
+    font-weight: 700;
+    margin-left: 30px;
+    font-style: italic;
+}
+
+.result-group {
+    display: flex;
+    flex-direction: row;
+    line-height: 7rem;
+}
+
+.result-age,
+.result-day,
+.result-month {
+    color: var(--Purple);
+}
+
+/* 
+    MEDIA QUERIES 
+*/
+@media screen and (max-width : 1024px) {
+    :root {
+        --xs-font: 400 14px 'Poppins', sans-serif;
+        --small-font: 400 12px 'Poppins', sans-serif;
+        --font-size-inputs: 700 20px 'Poppins', sans-serif;
+        --font-size-outputs: 800 70px 'Poppins', sans-serif;
+    }
+
+    .main-container {
+        height: 80vh;
+        width: 80%;
+    }
+
+    .result-group {
+        line-height: 6rem;
+    }
+}
+
+@media screen and (max-width: 904px) {
+    input {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --xs-font: 400 13px 'Poppins', sans-serif;
+        --small-font: 400 10px 'Poppins', sans-serif;
+        --font-size-inputs: 700 17px 'Poppins', sans-serif;
+        --font-size-outputs: 800 50px 'Poppins', sans-serif;
+    }
+
+    input {
+        width: 80px;
+    }
+
+    .input-section {
+        justify-content: center;
+    }
+
+    .main-container {
+        border-bottom-right-radius: 30px;
+    }
+
+    .result-group {
+        line-height: 3.5rem;
+    }
+
+    .button-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 36px 0;
+    }
+
+    .button-section button {
+        padding: 10px;
+        position: absolute;
+    }
+
+    .button-section img {
+        width: 36px;
+        height: 34px;
+    }
+
+    .button-section .line {
+        margin-left: 0px;
+    }
+
+    .input-group {
+        margin-left: 10px;
+    }
+
+    .input-error-year,
+    .input-error-month,
+    .input-error-day {
+        font-size: 7px;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    :root {
+        --xs-font: 400 12px 'Poppins', sans-serif;
+        --small-font: 400 10px 'Poppins', sans-serif;
+        --font-size-inputs: 700 15px 'Poppins', sans-serif;
+        --font-size-outputs: 800 35px 'Poppins', sans-serif;
+    }
+
+    .input-group {
+        margin: 10px;
+        margin-left: 0px;
+    }
+
+    .button-section {
+        margin: 20px 0;
+    }
+
+    .result-group {
+        line-height: 3rem;
+    }
+
+    .button-section img {
+        width: 26px;
+        height: 24px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    :root {
+        --xs-font: 400 11px 'Poppins', sans-serif;
+        --small-font: 400 10px 'Poppins', sans-serif;
+        --font-size-inputs: 700 13px 'Poppins', sans-serif;
+        --font-size-outputs: 800 30px 'Poppins', sans-serif;
+    }
+    
+    input {
+        margin-top: 1px;
+        width: 65px;
+    }
+}
+
+@media screen and (max-width:325px) {
+    :root {
+        --xs-font: 400 11px 'Poppins', sans-serif;
+        --small-font: 400 10px 'Poppins', sans-serif;
+        --font-size-inputs: 700 13px 'Poppins', sans-serif;
+        --font-size-outputs: 800 30px 'Poppins', sans-serif;
+    }
+    
+    input {
+        margin-top: 1px;
+        width: 65px;
+        padding: 10px;
+    }
+
+    .input-group p {
+        font-size: 10px;
+    }
+}

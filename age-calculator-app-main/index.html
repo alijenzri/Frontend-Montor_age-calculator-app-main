@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Age Calculator App</title>
+</head>
+
+<body>
+  <div class="main-container">
+
+    <div class="input-section">
+      <div class="input-group">
+        <p><label for="day">Day</label></p>
+        <input type="text" id="day" placeholder="DD">
+        <p class="input-error-day"></p>
+      </div>
+
+      <div class="input-group">
+        <p><label for="month">Month</label></p>
+        <input type="text" id="month" placeholder="MM">
+        <p class="input-error-month"></p>
+      </div>
+
+      <div class="input-group">
+        <p><label for="year">Year</label></p>
+        <input type="text" id="year" placeholder="YYYY">
+        <p class="input-error-year"></p>
+      </div>
+    </div>
+
+    <div class="button-section">
+      <div class="line"></div>
+      <button class="js-button">
+        <img src="assets/images/icon-arrow.svg" alt="">
+      </button>
+    </div>
+
+    <div class="result-section">
+      <div class="result-group">
+        <p class="result-age js-result-age">--</p>
+        <p style="margin-left:10px">years</p>
+      </div>
+      <div class="result-group">
+        <p class="result-month js-result-month">--</p>
+        <p style="margin-left:10px">months</p>
+      </div>
+      <div class="result-group">
+        <p class="result-day js-result-day">--</p>
+        <p style="margin-left:10px">days</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
